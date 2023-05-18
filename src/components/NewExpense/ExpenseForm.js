@@ -16,7 +16,7 @@ const ExpenseForm = (props) => {
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
-      date: enteredDate,
+      date: new Date(enteredDate),
     }
 
     props.onSaveExpenseDate(expenseData);
@@ -39,7 +39,7 @@ const ExpenseForm = (props) => {
         </div>
         <div className="new-expense__control">
           <label>Date</label>
-          <input type="date" min="2023-01-01" max="2025-01-01" onChange={inputHandler(setEnteredDate)} value={enteredDate} />
+          <input type="date" min='2023-01-01' max='2025-01-01' onChange={inputHandler(setEnteredDate)} value={enteredDate} />
         </div>
       </div>
       <div className="new-expense__actions">
